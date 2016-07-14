@@ -1,0 +1,13 @@
+.header {
+    position: relative;
+    top: 200px;
+}
+
+.form-block {
+    position: relative;
+    top: 250px;
+}
+
+.load-btn {
+    float: left;
+}
