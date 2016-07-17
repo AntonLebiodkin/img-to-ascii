@@ -11,9 +11,9 @@ if (isset($_POST["upload_img"]))
     {
         $im = loadImage($directory.$file_name, $file_type);
         if ($im){
-            echo "<pre style='font-family: monospace; font-size: 2px;'>";
+            echo "<span style='font-family: Courier New; line-height: 70%; font-size: 2px;'>";
             createASCII($im);
-            echo "</pre>";
+            echo "</span>";
         } else {
             echo "ERROR!";
         }
@@ -56,7 +56,7 @@ function createASCII($image)
     if ($X < 400 and $Y < 400){
         for ($i = 0; $i < $Y; $i++) {
             for ($j = 0; $j < $X; $j++) {
-                echo getASCIISymbol($image, $j, $i).getASCIISymbol($image, $j, $i).getASCIISymbol($image, $j, $i);
+                echo getASCIISymbol($image, $j, $i);
             }
             echo "<br>";
         }
@@ -64,7 +64,7 @@ function createASCII($image)
 }
 
 function getASCIISymbol($im, $x, $y){
-    $palette = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft|()1{}[]?-_+~i!lI;:,^`. ";
+    $palette = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft|()1{}[]?-_+~i!lI;:,^`.";
     $ASCII_MAX = 255;
     $rgb = imagecolorat($im, $x, $y);
 
